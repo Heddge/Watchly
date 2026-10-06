@@ -1,27 +1,73 @@
-# README
-
 # Watchly
-Web application that serves as a collection of a personal library of films, games, and books, and provides recommendations for what to watch/play/read.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web application for managing a personal library of movies, games, and books.
 
-Things you may want to cover:
+Watchly allows users to store items in their personal library, rate them, track their status, and receive personalized recommendations.
 
-* Ruby version
+## Features
 
-* System dependencies
+* User registration and authentication
+* Movies, games, and books
+* Personal user libraries
+* Search and filtering
+* Ratings from 1 to 10
+* Status tracking: Want, In Progress, Completed
+* Personalized recommendations
+* Library statistics
 
-* Configuration
+## Tech Stack
 
-* Database creation
+* Ruby on Rails
+* PostgreSQL
+* HTML / CSS
+* JavaScript
+* bcrypt
 
-* Database initialization
+## Database
 
-* How to run the test suite
+Main entities:
 
-* Services (job queues, cache servers, search engines, etc.)
+```text
+User
+  |
+  v
+UserItem ----> Item
+                |
+                v
+              Genre
+```
 
-* Deployment instructions
+Each user has a private library. Catalog items can be shared between multiple users.
 
-* ...
+## Getting Started
+
+Install dependencies:
+
+```bash
+bundle install
+```
+
+Create the database:
+
+```bash
+rails db:create
+rails db:migrate
+```
+
+Start the development server:
+
+```bash
+rails server
+```
+
+Open the application at:
+
+```text
+http://localhost:3000
+```
+
+## Project Status
+
+In development.
+
+This project is being developed as a university web development project.
