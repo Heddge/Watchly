@@ -1,0 +1,87 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore installed gems.
+/vendor/bundle
+
+# Ignore master key for decrypting credentials and other secrets.
+/config/master.key
+
+# Ignore local environment files
+.env
+.env.*
+
+# Ignore Rails logs.
+/log/*
+!/log/.keep
+
+# Ignore temporary files.
+/tmp/*
+!/tmp/.keep
+
+# Ignore uploaded files.
+/storage/*
+!/storage/.keep
+
+# Ignore SQLite databases.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore compiled assets.
+/public/assets
+/public/packs
+/public/vite
+/public/builds
+
+# Ignore node_modules.
+/node_modules
+
+# Ignore Yarn logs & cache.
+/.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+.yarnrc.yml
+
+# Ignore coverage.
+/coverage
+
+# Ignore system/editor files
+.DS_Store
+Thumbs.db
+
+# Windows
+Desktop.ini
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# RubyMine
+*.iml
+
+# RuboCop cache
+/.rubocop-https?*
+/.rubocop_todo.yml
+
+# Rails cache
+/tmp/cache/
+
+# Local PostgreSQL / database dumps
+*.dump
+*.sql
+*.sql.gz
+
+# Ignore local credentials / secrets
+/config/credentials/*.key
+
+# Ignore local development configuration
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
