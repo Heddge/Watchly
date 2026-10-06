@@ -1,0 +1,2 @@
+module UiCatalogueHelper
+end

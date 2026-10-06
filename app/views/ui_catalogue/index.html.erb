@@ -1,0 +1,332 @@
+<div class="ui-container">
+  <h1>Watchly UI Kit</h1>
+
+  <p class="ui-description">
+    Каталог элементов интерфейса приложения Watchly
+  </p>
+
+  <!-- TYPOGRAPHY -->
+  <section class="ui-section">
+    <h2>Типографика</h2>
+
+    <h1>Заголовок H1</h1>
+    <h2>Заголовок H2</h2>
+    <h3>Заголовок H3</h3>
+
+    <p>Основной текст интерфейса. Здесь будет описание фильмов, игр, книг и других элементов.</p>
+
+    <p class="ui-muted">Второстепенный текст и дополнительная информация.</p>
+  </section>
+
+  <!-- BUTTONS -->
+  <section class="ui-section">
+    <h2>Кнопки</h2>
+
+    <div class="ui-row">
+      <button class="ui-button">Основная кнопка</button>
+      <button class="ui-button ui-button-secondary">Вторичная</button>
+      <button class="ui-button ui-button-danger">Удалить</button>
+      <button class="ui-button ui-button-small">Маленькая</button>
+    </div>
+  </section>
+
+  <!-- FORMS -->
+  <section class="ui-section">
+    <h2>Формы</h2>
+
+    <div class="ui-form">
+      <div class="ui-field">
+        <label>Название</label>
+        <input type="text" placeholder="Например, Интерстеллар">
+      </div>
+
+      <div class="ui-field">
+        <label>Email</label>
+        <input type="email" placeholder="example@mail.com">
+      </div>
+
+      <div class="ui-field">
+        <label>Пароль</label>
+        <input type="password" placeholder="Введите пароль">
+      </div>
+
+      <div class="ui-field">
+        <label>Тип</label>
+        <select>
+          <option>Фильм</option>
+          <option>Игра</option>
+          <option>Книга</option>
+        </select>
+      </div>
+
+      <div class="ui-field">
+        <label>Описание</label>
+        <textarea placeholder="Введите описание"></textarea>
+      </div>
+
+      <div class="ui-field">
+        <label>Рейтинг</label>
+        <input type="range" min="1" max="10" value="8">
+      </div>
+
+      <div class="ui-field">
+        <label>
+          <input type="checkbox">
+          Добавить в личную библиотеку
+        </label>
+      </div>
+
+      <div class="ui-field">
+        <label>Статус</label>
+
+        <label>
+          <input type="radio" name="status">
+          Хочу
+        </label>
+
+        <label>
+          <input type="radio" name="status">
+          В процессе
+        </label>
+
+        <label>
+          <input type="radio" name="status">
+          Завершено
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="ui-section">
+    <h2>Поиск и фильтры</h2>
+
+    <div class="ui-row">
+      <input
+        class="ui-search"
+        type="text"
+        placeholder="Поиск по названию..."
+      >
+
+      <select>
+        <option>Все типы</option>
+        <option>Фильмы</option>
+        <option>Игры</option>
+        <option>Книги</option>
+      </select>
+
+      <select>
+        <option>Все жанры</option>
+        <option>Фантастика</option>
+        <option>Комедия</option>
+        <option>Драма</option>
+      </select>
+
+      <select>
+        <option>Все статусы</option>
+        <option>Хочу</option>
+        <option>В процессе</option>
+        <option>Завершено</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- BADGES -->
+  <section class="ui-section">
+    <h2>Статусы и категории</h2>
+
+    <div class="ui-row">
+      <span class="ui-badge">Фильм</span>
+      <span class="ui-badge">Игра</span>
+      <span class="ui-badge">Книга</span>
+
+      <span class="ui-badge ui-status-want">Хочу</span>
+      <span class="ui-badge ui-status-progress">В процессе</span>
+      <span class="ui-badge ui-status-done">Завершено</span>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section class="ui-section">
+    <h2>Карточки</h2>
+
+    <div class="ui-cards">
+
+      <div class="ui-card">
+        <div class="ui-card-cover">Обложка</div>
+
+        <div class="ui-card-content">
+          <span class="ui-badge">Фильм</span>
+
+          <h3>Интерстеллар</h3>
+
+          <p class="ui-muted">2014 · Фантастика</p>
+
+          <p>
+            Группа исследователей отправляется
+            через червоточину в поисках нового дома.
+          </p>
+
+          <div class="ui-rating">★ 9/10</div>
+
+          <button class="ui-button">Добавить</button>
+        </div>
+      </div>
+
+      <div class="ui-card">
+        <div class="ui-card-cover">Обложка</div>
+
+        <div class="ui-card-content">
+          <span class="ui-badge">Игра</span>
+
+          <h3>The Witcher 3</h3>
+
+          <p class="ui-muted">2015 · RPG</p>
+
+          <p>
+            Большая ролевая игра с открытым миром
+            и множеством сюжетных заданий.
+          </p>
+
+          <div class="ui-rating">★ 10/10</div>
+
+          <button class="ui-button">Добавить</button>
+        </div>
+      </div>
+
+      <div class="ui-card">
+        <div class="ui-card-cover">Обложка</div>
+
+        <div class="ui-card-content">
+          <span class="ui-badge">Книга</span>
+
+          <h3>1984</h3>
+
+          <p class="ui-muted">1949 · Антиутопия</p>
+
+          <p>
+            Роман о мире тотального контроля
+            и постоянного наблюдения.
+          </p>
+
+          <div class="ui-rating">★ 9/10</div>
+
+          <button class="ui-button">Добавить</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MESSAGES -->
+  <section class="ui-section">
+    <h2>Сообщения</h2>
+
+    <div class="ui-message ui-message-success">
+      Элемент успешно добавлен в библиотеку.
+    </div>
+
+    <div class="ui-message ui-message-error">
+      Не удалось сохранить изменения.
+    </div>
+
+    <div class="ui-message ui-message-info">
+      Заполните все необходимые поля.
+    </div>
+  </section>
+</div>
+
+  <!-- NAVIGATION -->
+  <section class="ui-section">
+    <h2>Навигация</h2>
+
+    <div class="ui-navbar-demo">
+      <div class="ui-logo">Watchly</div>
+
+      <div class="ui-nav-links">
+        <a href="#" class="ui-nav-active">Каталог</a>
+        <a href="#">Моя библиотека</a>
+        <a href="#">Рекомендации</a>
+        <a href="#">Профиль</a>
+      </div>
+
+      <button class="ui-button ui-button-small">
+        Выйти
+      </button>
+    </div>
+  </section>
+
+  <!-- LIBRARY CARD -->
+  <section class="ui-section">
+    <h2>Карточка личной библиотеки</h2>
+
+    <div class="ui-library-card">
+      <div class="ui-library-cover">
+        Обложка
+      </div>
+
+      <div class="ui-library-content">
+        <div class="ui-library-header">
+          <div>
+            <span class="ui-badge">Фильм</span>
+            <h3>Интерстеллар</h3>
+            <p class="ui-muted">2014 · Фантастика</p>
+          </div>
+
+          <div class="ui-rating">
+            ★ 9/10
+          </div>
+        </div>
+
+        <span class="ui-badge ui-status-done">
+          Завершено
+        </span>
+
+        <p>
+          Фильм добавлен в личную библиотеку пользователя.
+        </p>
+
+        <div class="ui-row">
+          <button class="ui-button ui-button-small">
+            Изменить
+          </button>
+
+          <button class="ui-button ui-button-danger ui-button-small">
+            Удалить
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS -->
+  <section class="ui-section">
+    <h2>Статистика пользователя</h2>
+
+    <div class="ui-stats">
+      <div class="ui-stat">
+        <div class="ui-stat-value">24</div>
+        <div class="ui-stat-label">Всего элементов</div>
+      </div>
+
+      <div class="ui-stat">
+        <div class="ui-stat-value">12</div>
+        <div class="ui-stat-label">Фильмов</div>
+      </div>
+
+      <div class="ui-stat">
+        <div class="ui-stat-value">7</div>
+        <div class="ui-stat-label">Игр</div>
+      </div>
+
+      <div class="ui-stat">
+        <div class="ui-stat-value">5</div>
+        <div class="ui-stat-label">Книг</div>
+      </div>
+
+      <div class="ui-stat">
+        <div class="ui-stat-value">8.7</div>
+        <div class="ui-stat-label">Средний рейтинг</div>
+      </div>
+    </div>
+  </section>
