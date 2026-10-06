@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card">
+    <h1>Вход в Watchly</h1>
+
+    <%= form_with url: "/login", method: :post do |form| %>
+      <div class="field">
+        <%= form.label :email, "Email" %>
+        <%= form.email_field :email, placeholder: "Введите email" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :password, "Пароль" %>
+        <%= form.password_field :password, placeholder: "Введите пароль" %>
+      </div>
+
+      <%= form.submit "Войти", class: "button" %>
+    <% end %>
+
+    <div class="links">
+      Нет аккаунта?
+      <%= link_to "Зарегистрироваться", "/register" %>
+    </div>
+  </div>
+</div>

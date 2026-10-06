@@ -1,2 +1,30 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <div class="card">
+    <h1>Watchly</h1>
+
+    <% if current_user %>
+      <p style="text-align: center;">
+        Добро пожаловать,
+        <strong><%= current_user.username %></strong>!
+      </p>
+
+      <p style="text-align: center; color: #666;">
+        Вы успешно вошли в свой аккаунт.
+      </p>
+
+      <div class="logout">
+        <%= button_to "Выйти", "/logout", method: :delete, class: "button" %>
+      </div>
+    <% else %>
+      <p style="text-align: center; color: #666;">
+        Вы не авторизованы.
+      </p>
+
+      <div class="links">
+        <%= link_to "Войти", "/login" %>
+        &nbsp; · &nbsp;
+        <%= link_to "Зарегистрироваться", "/register" %>
+      </div>
+    <% end %>
+  </div>
+</div>

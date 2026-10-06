@@ -1,10 +1,1006 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f5f7;
+  color: #222;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d0d3d8;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #444;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links a {
+  color: #222;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.logout {
+  margin-top: 20px;
+}
+
+/* =========================================
+   WATCHLY UI KIT
+   ========================================= */
+
+.ui-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 25px 60px;
+}
+
+.ui-container > h1 {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.ui-description {
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.ui-section {
+  background: white;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+}
+
+.ui-section h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.ui-section h3 {
+  margin-bottom: 10px;
+}
+
+.ui-muted {
+  color: #777;
+}
+
+.ui-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* BUTTONS */
+
+.ui-button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.ui-button:hover {
+  background: #444;
+}
+
+.ui-button-secondary {
+  background: #e9eaec;
+  color: #222;
+}
+
+.ui-button-secondary:hover {
+  background: #dcdde0;
+}
+
+.ui-button-danger {
+  background: #b42318;
+}
+
+.ui-button-danger:hover {
+  background: #8f1c13;
+}
+
+.ui-button-small {
+  padding: 7px 12px;
+  font-size: 13px;
+}
+
+/* FORMS */
+
+.ui-form {
+  max-width: 650px;
+}
+
+.ui-field {
+  margin-bottom: 20px;
+}
+
+.ui-field > label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.ui-field input[type="text"],
+.ui-field input[type="email"],
+.ui-field input[type="password"],
+.ui-field select,
+.ui-field textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d0d3d8;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: white;
+}
+
+.ui-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.ui-field input:focus,
+.ui-field select:focus,
+.ui-field textarea:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.ui-field input[type="checkbox"],
+.ui-field input[type="radio"] {
+  width: auto;
+  margin-right: 7px;
+}
+
+.ui-field input[type="range"] {
+  width: 100%;
+}
+
+/* SEARCH */
+
+.ui-search {
+  flex: 1;
+  min-width: 220px;
+  padding: 11px 13px;
+  border: 1px solid #d0d3d8;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.ui-row select {
+  padding: 11px 13px;
+  border: 1px solid #d0d3d8;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+}
+
+/* BADGES */
+
+.ui-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e9eaec;
+  color: #333;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.ui-status-want {
+  background: #eee;
+}
+
+.ui-status-progress {
+  background: #ddd;
+}
+
+.ui-status-done {
+  background: #cfcfcf;
+}
+
+/* CARDS */
+
+.ui-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.ui-card {
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+  border-radius: 14px;
+  background: white;
+}
+
+.ui-card-cover {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9eaec;
+  color: #777;
+  font-weight: bold;
+}
+
+.ui-card-content {
+  padding: 20px;
+}
+
+.ui-card-content h3 {
+  margin-top: 12px;
+}
+
+.ui-card-content p {
+  line-height: 1.5;
+}
+
+.ui-rating {
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* MESSAGES */
+
+.ui-message {
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.ui-message-success {
+  background: #f1f1f1;
+}
+
+.ui-message-error {
+  background: #e8e8e8;
+}
+
+.ui-message-info {
+  background: #f7f7f7;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .ui-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .ui-container {
+    margin-top: 30px;
+  }
+
+  .ui-section {
+    padding: 20px;
+  }
+}
+
+/* =========================================
+   WATCHLY BLUE-GRAY THEME
+   ========================================= */
+
+body {
+  background: #eef2f7;
+  color: #172033;
+}
+
+/* Главные страницы */
+
+.card {
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(24, 42, 68, 0.10);
+}
+
+.button {
+  background: #18324f;
+}
+
+.button:hover {
+  background: #24496f;
+}
+
+.links a {
+  color: #24577f;
+}
+
+.links a:hover {
+  color: #4b91bd;
+}
+
+
+/* UI KIT */
+
+.ui-section {
+  background: #ffffff;
+  box-shadow: 0 6px 25px rgba(24, 42, 68, 0.08);
+}
+
+.ui-description,
+.ui-muted {
+  color: #68778b;
+}
+
+.ui-section h2 {
+  border-bottom-color: #dce4ed;
+}
+
+
+/* Кнопки */
+
+.ui-button {
+  background: #18324f;
+}
+
+.ui-button:hover {
+  background: #24496f;
+}
+
+.ui-button-secondary {
+  background: #dce6f0;
+  color: #18324f;
+}
+
+.ui-button-secondary:hover {
+  background: #cbd9e7;
+}
+
+.ui-button-danger {
+  background: #8f3f4a;
+}
+
+.ui-button-danger:hover {
+  background: #74313b;
+}
+
+
+/* Поля */
+
+.ui-field input[type="text"],
+.ui-field input[type="email"],
+.ui-field input[type="password"],
+.ui-field select,
+.ui-field textarea,
+.ui-search,
+.ui-row select {
+  border-color: #c8d4e1;
+  color: #172033;
+}
+
+.ui-field input:focus,
+.ui-field select:focus,
+.ui-field textarea:focus,
+.ui-search:focus {
+  border-color: #4b91bd;
+}
+
+
+/* Badges */
+
+.ui-badge {
+  background: #dce6f0;
+  color: #24496f;
+}
+
+.ui-status-want {
+  background: #e1e7ee;
+  color: #45576d;
+}
+
+.ui-status-progress {
+  background: #c9dced;
+  color: #24577f;
+}
+
+.ui-status-done {
+  background: #b9d0df;
+  color: #18324f;
+}
+
+
+/* Карточки */
+
+.ui-card {
+  border-color: #d7e0e9;
+}
+
+.ui-card-cover {
+  background: #dce6f0;
+  color: #58718b;
+}
+
+.ui-rating {
+  color: #24577f;
+}
+
+
+/* Сообщения */
+
+.ui-message {
+  border-color: #d5e0ea;
+}
+
+.ui-message-success {
+  background: #e1edf2;
+  color: #24577f;
+}
+
+.ui-message-error {
+  background: #eee1e5;
+  color: #74313b;
+}
+
+.ui-message-info {
+  background: #e1e8f0;
+  color: #36536f;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.ui-navbar-demo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 20px;
+  border: 1px solid #d7e0e9;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.ui-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #18324f;
+}
+
+.ui-nav-links {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.ui-nav-links a {
+  color: #68778b;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.ui-nav-links a:hover,
+.ui-nav-links .ui-nav-active {
+  color: #24577f;
+}
+
+
+/* =========================================
+   LIBRARY CARD
+   ========================================= */
+
+.ui-library-card {
+  display: flex;
+  gap: 25px;
+  padding: 20px;
+  border: 1px solid #d7e0e9;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.ui-library-cover {
+  width: 130px;
+  min-width: 130px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dce6f0;
+  color: #58718b;
+  border-radius: 8px;
+}
+
+.ui-library-content {
+  flex: 1;
+}
+
+.ui-library-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ui-library-header h3 {
+  margin-bottom: 5px;
+}
+
+
+/* =========================================
+   STATISTICS
+   ========================================= */
+
+.ui-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.ui-stat {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #d7e0e9;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.ui-stat-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #18324f;
+  margin-bottom: 7px;
+}
+
+.ui-stat-label {
+  color: #68778b;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+  .ui-navbar-demo {
+    flex-wrap: wrap;
+  }
+
+  .ui-nav-links {
+    order: 3;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+
+  .ui-library-card {
+    flex-direction: column;
+  }
+
+  .ui-library-cover {
+    width: 100%;
+  }
+
+  .ui-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   WATCHLY DARK BLUE THEME
+   ========================================= */
+
+body {
+  background: #081525;
+  color: #e8f0f8;
+}
+
+
+/* Главные страницы */
+
+.card {
+  background: #10243a;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  color: #f1f6fb;
+}
+
+.button {
+  background: #236da8;
+}
+
+.button:hover {
+  background: #2f86ca;
+}
+
+.links a {
+  color: #65b7ed;
+}
+
+.links a:hover {
+  color: #91cff5;
+}
+
+
+/* =========================================
+   UI KIT
+   ========================================= */
+
+.ui-container {
+  color: #e8f0f8;
+}
+
+.ui-description {
+  color: #8fa6bc;
+}
+
+
+/* Секции */
+
+.ui-section {
+  background: #10243a;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.28);
+}
+
+.ui-section h2 {
+  color: #f1f6fb;
+  border-bottom-color: #29435d;
+}
+
+.ui-section h3 {
+  color: #e8f0f8;
+}
+
+.ui-muted {
+  color: #8fa6bc;
+}
+
+
+/* =========================================
+   КНОПКИ
+   ========================================= */
+
+.ui-button {
+  background: #236da8;
+  color: #ffffff;
+}
+
+.ui-button:hover {
+  background: #2f86ca;
+}
+
+.ui-button-secondary {
+  background: #29435d;
+  color: #dcecf8;
+}
+
+.ui-button-secondary:hover {
+  background: #355774;
+}
+
+.ui-button-danger {
+  background: #9b4655;
+}
+
+.ui-button-danger:hover {
+  background: #bd5668;
+}
+
+
+/* =========================================
+   ФОРМЫ
+   ========================================= */
+
+.ui-field input[type="text"],
+.ui-field input[type="email"],
+.ui-field input[type="password"],
+.ui-field select,
+.ui-field textarea,
+.ui-search,
+.ui-row select {
+  background: #0b1b2c;
+  color: #e8f0f8;
+  border-color: #29435d;
+}
+
+.ui-field input::placeholder,
+.ui-search::placeholder,
+.ui-field textarea::placeholder {
+  color: #627b93;
+}
+
+.ui-field input:focus,
+.ui-field select:focus,
+.ui-field textarea:focus,
+.ui-search:focus {
+  border-color: #4da3dc;
+  box-shadow: 0 0 0 2px rgba(77, 163, 220, 0.15);
+}
+
+.ui-field label {
+  color: #dbe7f2;
+}
+
+
+/* =========================================
+   ПОИСК И ФИЛЬТРЫ
+   ========================================= */
+
+.ui-row select {
+  background: #0b1b2c;
+  color: #dbe7f2;
+}
+
+
+/* =========================================
+   BADGES
+   ========================================= */
+
+.ui-badge {
+  background: #21415e;
+  color: #9ed3f2;
+}
+
+.ui-status-want {
+  background: #26394c;
+  color: #a9bacb;
+}
+
+.ui-status-progress {
+  background: #194d70;
+  color: #8dccf0;
+}
+
+.ui-status-done {
+  background: #205a7d;
+  color: #a4dcf7;
+}
+
+
+/* =========================================
+   КАРТОЧКИ
+   ========================================= */
+
+.ui-card {
+  background: #0d1f32;
+  border-color: #29435d;
+}
+
+.ui-card-cover {
+  background: #18334c;
+  color: #7692ab;
+}
+
+.ui-card-content p {
+  color: #a8bacb;
+}
+
+.ui-rating {
+  color: #65b7ed;
+}
+
+
+/* =========================================
+   СООБЩЕНИЯ
+   ========================================= */
+
+.ui-message {
+  border-color: #29435d;
+}
+
+.ui-message-success {
+  background: #123a4c;
+  color: #82c9e8;
+}
+
+.ui-message-error {
+  background: #462731;
+  color: #f09aaa;
+}
+
+.ui-message-info {
+  background: #17334c;
+  color: #9bc8e7;
+}
+
+
+/* =========================================
+   НАВИГАЦИЯ
+   ========================================= */
+
+.ui-navbar-demo {
+  background: #0b1b2c;
+  border-color: #29435d;
+}
+
+.ui-logo {
+  color: #69b9ed;
+}
+
+.ui-nav-links a {
+  color: #8198ad;
+}
+
+.ui-nav-links a:hover,
+.ui-nav-links .ui-nav-active {
+  color: #65b7ed;
+}
+
+
+/* =========================================
+   КАРТОЧКА БИБЛИОТЕКИ
+   ========================================= */
+
+.ui-library-card {
+  background: #0b1b2c;
+  border-color: #29435d;
+}
+
+.ui-library-cover {
+  background: #18334c;
+  color: #7692ab;
+}
+
+
+/* =========================================
+   СТАТИСТИКА
+   ========================================= */
+
+.ui-stat {
+  background: #0b1b2c;
+  border-color: #29435d;
+}
+
+.ui-stat-value {
+  color: #65b7ed;
+}
+
+.ui-stat-label {
+  color: #8198ad;
+}
+
+
+/* =========================================
+   WATCHLY DARK THEME — REAL PAGES
+   ========================================= */
+
+body {
+  background: #081525;
+  color: #e8f0f8;
+}
+
+/* Главная карточка */
+
+.card {
+  background: #10243a;
+  border: 1px solid #29435d;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Заголовки */
+
+.card h1 {
+  color: #f1f6fb;
+}
+
+/* Текст */
+
+.card p {
+  color: #c2d0de;
+}
+
+.card strong {
+  color: #69b9ed;
+}
+
+/* Поля формы */
+
+.card input[type="text"],
+.card input[type="email"],
+.card input[type="password"] {
+  background: #0b1b2c;
+  color: #e8f0f8;
+  border: 1px solid #29435d;
+}
+
+.card input::placeholder {
+  color: #627b93;
+}
+
+.card input:focus {
+  border-color: #4da3dc;
+  box-shadow: 0 0 0 2px rgba(77, 163, 220, 0.15);
+}
+
+/* Подписи */
+
+.card label {
+  color: #dbe7f2;
+}
+
+/* Главные кнопки */
+
+.card .button {
+  background: #236da8;
+  color: white;
+}
+
+.card .button:hover {
+  background: #2f86ca;
+}
+
+/* Ссылки */
+
+.card .links {
+  color: #8fa6bc;
+}
+
+.card .links a {
+  color: #65b7ed;
+}
+
+.card .links a:hover {
+  color: #91cff5;
+}

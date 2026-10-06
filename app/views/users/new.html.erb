@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card">
+    <h1>Регистрация</h1>
+
+    <%= form_with model: @user, url: "/register" do |form| %>
+      <div class="field">
+        <%= form.label :username, "Имя пользователя" %>
+        <%= form.text_field :username, placeholder: "Введите имя" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :email, "Email" %>
+        <%= form.email_field :email, placeholder: "Введите email" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :password, "Пароль" %>
+        <%= form.password_field :password, placeholder: "Введите пароль" %>
+      </div>
+
+      <%= form.submit "Зарегистрироваться", class: "button" %>
+    <% end %>
+
+    <div class="links">
+      Уже есть аккаунт?
+      <%= link_to "Войти", "/login" %>
+    </div>
+  </div>
+</div>
