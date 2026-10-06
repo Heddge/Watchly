@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get "sessions/new"
-  get "sessions/create"
-  get "sessions/destroy"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   get "/register", to: "users#new"
   post "/register", to: "users#create"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
