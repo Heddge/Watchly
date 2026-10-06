@@ -39,32 +39,6 @@ UserItem ----> Item
 
 Each user has a private library. Catalog items can be shared between multiple users.
 
-## Getting Started
-
-Install dependencies:
-
-```bash
-bundle install
-```
-
-Create the database:
-
-```bash
-rails db:create
-rails db:migrate
-```
-
-Start the development server:
-
-```bash
-rails server
-```
-
-Open the application at:
-
-```text
-http://localhost:3000
-```
 
 ## Project Status
 
