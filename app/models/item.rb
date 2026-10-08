@@ -1,4 +1,10 @@
 class Item < ApplicationRecord
+  has_many :user_items, dependent: :destroy
+has_many :users, through: :user_items
+
+has_many :item_genres, dependent: :destroy
+has_many :genres, through: :item_genres
+
   validates :title, presence: true
   validates :item_type, inclusion: { in: %w[movie game book] }
   validates :release_year, presence: true,
