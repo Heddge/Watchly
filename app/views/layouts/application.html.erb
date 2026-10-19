@@ -23,7 +23,86 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  
+
+<body>
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <%= link_to root_path, class: "sidebar-brand" do %>
+        <span class="sidebar-brand-mark">W</span>
+        <span class="sidebar-brand-name">Watchly</span>
+      <% end %>
+
+      <p class="sidebar-caption">ТВОЁ КИНОПРОСТРАНСТВО</p>
+
+      <nav class="sidebar-nav">
+        <%= link_to root_path,
+            class: "sidebar-link #{'active' if current_page?(root_path)}" do %>
+          <span class="sidebar-icon">⌂</span>
+          <span>Главная</span>
+        <% end %>
+
+        <%= link_to items_path,
+            class: "sidebar-link #{'active' if controller_name == 'items'}" do %>
+          <span class="sidebar-icon">▦</span>
+          <span>Каталог</span>
+        <% end %>
+
+        <% if current_user %>
+          <%= link_to user_items_path,
+              class: "sidebar-link #{'active' if controller_name == 'user_items'}" do %>
+            <span class="sidebar-icon">▤</span>
+            <span>Моя библиотека</span>
+          <% end %>
+        <% end %>
+
+        <%= link_to "/statistics",
+            class: "sidebar-link #{'active' if request.path == '/statistics'}" do %>
+          <span class="sidebar-icon">▥</span>
+          <span>Статистика</span>
+        <% end %>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <% if current_user %>
+          <div class="sidebar-user">
+            <span class="sidebar-avatar">
+              <%= current_user.username.first.upcase %>
+            </span>
+            <span class="sidebar-username"><%= current_user.username %></span>
+          </div>
+
+          <%= button_to "/logout",
+              method: :delete,
+              class: "sidebar-logout" do %>
+            <span class="sidebar-icon">↪</span>
+            <span>Выйти</span>
+          <% end %>
+        <% else %>
+          <%= link_to "/login", class: "sidebar-link" do %>
+            <span class="sidebar-icon">↪</span>
+            <span>Войти</span>
+          <% end %>
+
+          <%= link_to "Регистрация", "/register",
+              class: "sidebar-register" %>
+        <% end %>
+      </div>
+    </aside>
+
+    <main class="site-main">
+      <% if notice.present? %>
+        <div class="site-flash site-flash-notice"><%= notice %></div>
+      <% end %>
+
+      <% if alert.present? %>
+        <div class="site-flash site-flash-alert"><%= alert %></div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+  </div>
+</body>
+
+
 </html>

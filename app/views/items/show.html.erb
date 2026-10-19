@@ -1,0 +1,75 @@
+
+<div class="catalog-page movie-detail-page">
+  <%= link_to "← Back to Movies", items_path, class: "back-to-catalog" %>
+
+  <section class="movie-detail-layout">
+    <div class="movie-detail-poster">
+      <% if @item.poster_path.present? %>
+        <%= image_tag(
+          "https://image.tmdb.org/t/p/w500#{@item.poster_path}",
+          alt: "#{@item.title} poster",
+          class: "movie-poster"
+        ) %>
+      <% else %>
+        <div class="movie-detail-no-poster">No poster available</div>
+      <% end %>
+    </div>
+
+    <div class="movie-detail-content">
+      <p class="catalog-eyebrow">WATCHLY / MOVIE DETAILS</p>
+
+      <h1 class="movie-detail-title"><%= @item.title %></h1>
+
+      <div class="movie-detail-meta">
+        <span><%= @item.release_year %></span>
+        <span class="movie-meta-dot">•</span>
+        <span>Movie</span>
+
+        <% if @item.tmdb_rating.present? %>
+          <span class="movie-meta-dot">•</span>
+          <span class="movie-detail-rating">
+            ★ <%= number_with_precision(@item.tmdb_rating, precision: 1) %>
+            <small>/ 10 TMDB</small>
+          </span>
+        <% end %>
+      </div>
+
+      <div class="movie-detail-divider"></div>
+
+      <h2 class="movie-section-title">Overview</h2>
+      <p class="movie-detail-description">
+        <%= @item.description.presence || "No description is available for this movie yet." %>
+      </p>
+
+      <% if @item.genres.any? %>
+        <h2 class="movie-section-title">Genres</h2>
+        <div class="movie-genre-list">
+          <% @item.genres.each do |genre| %>
+            <span class="movie-genre-tag"><%= genre.name %></span>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="movie-detail-library-panel">
+        <div>
+          <h2>Your library</h2>
+          <p>Keep track of your movies and ratings in Watchly.</p>
+        </div>
+
+        <% if current_user %>
+          <% if current_user.user_items.exists?(item_id: @item.id) %>
+            <p class="movie-already-added">✓ Already in your library</p>
+          <% else %>
+            <%= form_with url: user_items_path, method: :post, local: true,
+                          class: "movie-add-form" do |form| %>
+              <%= form.hidden_field :item_id, value: @item.id %>
+              <%= form.submit "+ Add to My Library", class: "movie-add-button" %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to "Log in to add movie", "/login", class: "movie-add-button" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

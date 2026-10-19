@@ -1,0 +1,116 @@
+
+<div class="statistics-page">
+  <div class="statistics-header">
+    <p class="dashboard-eyebrow">ТВОЁ КИНОПРОСТРАНСТВО</p>
+    <h1>Моя статистика</h1>
+    <p>Посмотри, как растёт твоя коллекция фильмов.</p>
+  </div>
+
+  <section class="statistics-cards">
+    <article class="statistics-card">
+      <span class="statistics-card-icon">▤</span>
+      <span class="statistics-card-label">В библиотеке</span>
+      <strong class="statistics-card-value"><%= @total_movies %></strong>
+      <span class="statistics-card-caption">фильмов всего</span>
+    </article>
+
+    <article class="statistics-card">
+      <span class="statistics-card-icon">✓</span>
+      <span class="statistics-card-label">Просмотрено</span>
+      <strong class="statistics-card-value"><%= @completed_movies %></strong>
+      <span class="statistics-card-caption">завершённых просмотров</span>
+    </article>
+
+    <article class="statistics-card">
+      <span class="statistics-card-icon">★</span>
+      <span class="statistics-card-label">Оценено</span>
+      <strong class="statistics-card-value"><%= @rated_movies %></strong>
+      <span class="statistics-card-caption">фильмов с оценкой</span>
+    </article>
+
+    <article class="statistics-card">
+      <span class="statistics-card-icon">✦</span>
+      <span class="statistics-card-label">Средняя оценка</span>
+      <strong class="statistics-card-value">
+        <%= @average_personal_rating || "—" %>
+      </strong>
+      <span class="statistics-card-caption">из 10 баллов</span>
+    </article>
+  </section>
+
+  <section class="statistics-panel">
+    <div class="statistics-section-heading">
+      <div>
+        <h2>Статусы просмотра</h2>
+        <p>Распределение фильмов в твоей библиотеке</p>
+      </div>
+    </div>
+
+    <% status_stats = [
+      ["В планах", @planned_movies, "statistics-bar-planned"],
+      ["Смотрю", @in_progress_movies, "statistics-bar-progress"],
+      ["Просмотрено", @completed_movies, "statistics-bar-completed"]
+    ] %>
+
+    <% status_stats.each do |label, count, css_class| %>
+      <div class="statistics-status-row">
+        <div class="statistics-status-info">
+          <span><%= label %></span>
+          <strong><%= count %></strong>
+        </div>
+
+        <div class="statistics-progress-track">
+          <div
+            class="statistics-progress-fill <%= css_class %>"
+            style="width: <%= @total_movies.positive? ? count * 100.0 / @total_movies : 0 %>%"
+          ></div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section class="statistics-panel">
+    <div class="statistics-section-heading">
+      <div>
+        <h2>Любимые жанры</h2>
+        <p>Жанры, которые чаще всего встречаются в твоей коллекции</p>
+      </div>
+    </div>
+
+    <% if @genre_stats.any? %>
+      <div class="statistics-genres">
+        <% @genre_stats.each_with_index do |(genre, count), index| %>
+          <div class="statistics-genre-row">
+            <span class="statistics-genre-rank">
+              <%= index + 1 %>
+            </span>
+
+            <span class="statistics-genre-name"><%= genre %></span>
+
+            <div class="statistics-genre-track">
+              <div
+                class="statistics-genre-fill"
+                style="width: <%= count * 100.0 / @genre_stats.first[1] %>%"
+              ></div>
+            </div>
+
+            <span class="statistics-genre-count">
+              <%= count %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="statistics-empty">
+        <p>Пока недостаточно данных о жанрах.</p>
+        <%= link_to "Перейти в каталог", items_path,
+            class: "dashboard-primary-button" %>
+      </div>
+    <% end %>
+  </section>
+
+  <div class="statistics-footer">
+    <%= link_to "← Вернуться на главную", root_path,
+        class: "dashboard-text-link" %>
+  </div>
+</div>

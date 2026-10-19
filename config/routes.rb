@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "statistics/index"
+  resources :items, only: [ :index, :show ]
+  resources :user_items, only: [ :index, :create, :update ]
   get "/uicatalogue", to: "ui_catalogue#index"
   get "home/index"
   get "/login", to: "sessions#new"
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/register", to: "users#new"
   post "/register", to: "users#create"
+  get "/statistics", to: "statistics#index", as: :statistics
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

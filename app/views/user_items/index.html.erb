@@ -1,0 +1,84 @@
+
+<div class="catalog-page my-library-page">
+  <div class="catalog-header">
+    <div>
+      <p class="catalog-eyebrow">YOUR PERSONAL COLLECTION</p>
+      <h1>My Library</h1>
+      <p class="catalog-subtitle">
+        Your movies, your progress, your ratings.
+      </p>
+    </div>
+
+    <span class="catalog-count">
+      <%= @user_items.size %> movies
+    </span>
+  </div>
+
+  <% if @user_items.any? %>
+    <div class="library-grid">
+      <% @user_items.each do |user_item| %>
+        <% item = user_item.item %>
+
+        <article class="library-card">
+          <%= link_to item_path(item), class: "library-poster-link" do %>
+            <% if item.poster_path.present? %>
+              <%= image_tag(
+                "https://image.tmdb.org/t/p/w500#{item.poster_path}",
+                alt: "#{item.title} poster",
+                class: "library-poster",
+                loading: "lazy"
+              ) %>
+            <% else %>
+              <div class="library-poster-placeholder">NO POSTER</div>
+            <% end %>
+          <% end %>
+
+          <div class="library-card-content">
+            <h2><%= link_to item.title, item_path(item) %></h2>
+
+            <p class="library-movie-year"><%= item.release_year %></p>
+
+            <% if item.tmdb_rating.present? %>
+              <p class="library-tmdb-rating">
+                ★ <%= number_with_precision(item.tmdb_rating, precision: 1) %>
+                <span>TMDB</span>
+              </p>
+            <% end %>
+
+            <div class="library-status-badge status-<%= user_item.status %>">
+              <%= user_item.status.humanize %>
+            </div>
+
+            <%= form_with model: user_item, url: user_item_path(user_item),
+                          method: :patch, local: true,
+                          class: "library-edit-form" do |form| %>
+              <div class="library-form-field">
+                <%= form.label :status, "Viewing status" %>
+                <%= form.select :status, [
+                  ["Want to watch", "want"],
+                  ["In progress", "in_progress"],
+                  ["Completed", "completed"]
+                ] %>
+              </div>
+
+              <div class="library-form-field">
+                <%= form.label :rating, "Your rating (1–10)" %>
+                <%= form.select :rating,
+                  [["Not rated", ""]] + (1..10).map { |n| [n.to_s, n] },
+                  selected: user_item.rating %>
+              </div>
+
+              <%= form.submit "Save changes", class: "library-save-button" %>
+            <% end %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="catalog-empty library-empty">
+      <h2>Your library is waiting for its first movie</h2>
+      <p>Explore the catalog and add movies you want to watch.</p>
+      <%= link_to "Explore movies", items_path, class: "movie-add-button" %>
+    </div>
+  <% end %>
+</div>

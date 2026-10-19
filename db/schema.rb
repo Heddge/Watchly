@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_08_170101) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_19_073327) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -33,6 +33,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_08_170101) do
     t.integer "release_year", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tmdb_id"
+    t.string "poster_path"
+    t.decimal "tmdb_rating", precision: 4, scale: 2
+    t.index ["tmdb_id"], name: "index_items_on_tmdb_id", unique: true
   end
 
   create_table "user_items", force: :cascade do |t|
