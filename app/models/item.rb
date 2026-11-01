@@ -26,7 +26,17 @@ class Item < ApplicationRecord
     item_type == "game"
   end
 
-  def book?
+    def book?
     item_type == "book"
+  end
+
+  # Average rating given by Watchly users
+  def community_rating
+    user_items.where.not(rating: nil).average(:rating)&.round(1)
+  end
+
+  # Number of users who rated this movie
+  def community_rating_count
+    user_items.where.not(rating: nil).count
   end
 end

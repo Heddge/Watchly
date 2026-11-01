@@ -1,0 +1,17 @@
+<turbo-frame id="community_rating_<%= item.id %>">
+  <div class="community-rating">
+    <span class="community-rating-label">Watchly Community</span>
+
+    <% if item.community_rating.present? %>
+      <span class="community-rating-value">
+        ★ <%= item.community_rating %>/10
+      </span>
+      <span class="community-rating-count">
+        <%= item.community_rating_count %>
+        <%= "rating".pluralize(item.community_rating_count) %>
+      </span>
+    <% else %>
+      <span class="community-rating-empty">Not rated yet</span>
+    <% end %>
+  </div>
+</turbo-frame>
