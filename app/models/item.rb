@@ -10,11 +10,11 @@ class Item < ApplicationRecord
   validates :item_type, inclusion: { in: %w[movie game book] }
 
   validates :release_year, presence: true,
-                           numericality: {
-                             only_integer: true,
-                             greater_than: 1800,
-                             less_than_or_equal_to: Date.current.year
-                           }
+    numericality: {
+      only_integer: true,
+      greater_than: 1800,
+      less_than_or_equal_to: Date.current.year
+    }
 
   validates :tmdb_id, uniqueness: true, allow_nil: true
 
